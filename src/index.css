@@ -1,0 +1,128 @@
+/* ==========================================================================
+   1. ПОДКЛЮЧЕНИЕ ШРИФТОВ (Google Fonts - Nunito)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+/* ==========================================================================
+   2. ГЛОБАЛЬНЫЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ
+   ========================================================================== */
+:root {
+  /* Основная палитра (Вайб мягкого Web3 / Pastel) */
+  --bg-sky: #e0f2fe;
+  /* Светло-голубое небо */
+  --text-main: #1e293b;
+  /* Глубокий темно-серый для текста */
+  --text-muted: #64748b;
+  /* Спокойный серый для подзаголовков */
+
+  /* Цвета кнопок и акцентов (с объёмными тенями) */
+  --btn-orange: #ff9800;
+  --btn-orange-hover: #f57c00;
+  --btn-orange-shadow: #e65100;
+
+  --btn-blue: #2196f3;
+  --btn-blue-hover: #1976d2;
+  --btn-blue-shadow: #0d47a1;
+}
+
+/* ==========================================================================
+   3. СБРОС СТИЛЕЙ (Reset & Box-Sizing)
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  /* Защита от горизонтальной прокрутки */
+}
+
+/* ==========================================================================
+   4. БАЗОВЫЕ ЭЛЕМЕНТЫ
+   ========================================================================== */
+body {
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+  /* Делаем текст изначально чуть плотнее для мультяшности */
+  color: var(--text-main);
+  background-color: var(--bg-sky);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Стили для стандартных заголовков */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+  /* Максимально жирный для игрового/Web3 стиля */
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   5. ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ (Utility Classes)
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Класс для создания сочных 3D кнопок */
+.btn-3d {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  border-radius: 16px;
+  background: var(--btn-orange);
+  box-shadow: 0 6px 0 var(--btn-orange-shadow);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-3d:hover {
+  background: var(--btn-orange-hover);
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 var(--btn-orange-shadow);
+}
+
+.btn-3d:active {
+  transform: translateY(6px);
+  box-shadow: 0 0px 0 var(--btn-orange-shadow);
+}

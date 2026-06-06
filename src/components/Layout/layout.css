@@ -1,0 +1,65 @@
+/* ==========================================================================
+   LAYOUT.CSS - Глобальная структура и анимированный фон
+   ========================================================================== */
+
+/* Главный контейнер занимает весь экран и выстраивает элементы в колонку */
+.layout {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Обертка для фона - фиксируем позади всего сайта */
+.global-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    /* Резервный цвет фона берем из переменных */
+    background-color: var(--bg-sky, #e0f2fe);
+}
+
+/* Лента с картинками для бесшовной анимации */
+.global-background-track {
+    display: flex;
+    height: 100%;
+    width: max-content;
+    will-change: transform;
+    /* 60 секунд на один полный цикл для плавности */
+    animation: slideTrack 60s linear infinite;
+}
+
+/* Настройки самих картинок фона */
+.global-background-track img {
+    width: 2816px;
+    height: 1536px;
+    flex-shrink: 0;
+    object-fit: cover;
+    pointer-events: none;
+    /* Отключаем взаимодействие, чтобы не мешали кликам */
+}
+
+/* Анимация движения на видеокарте (GPU) */
+@keyframes slideTrack {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-2816px, 0, 0);
+    }
+}
+
+/* Основной контент (Outlet) */
+main {
+    flex: 1;
+    /* Растягивается, прижимая футер к низу экрана */
+    padding: 16px 24px;
+    position: relative;
+    z-index: 1;
+    /* Поднимаем контент над фоном */
+}

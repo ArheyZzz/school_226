@@ -1,0 +1,174 @@
+/* ==========================================================================
+   GPD.CSS - Група продовженого дня
+   ========================================================================== */
+
+.gpd-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  padding: 60px 0 80px 0;
+  /* Збільшений верхній відступ, як ми робили в Музеї */
+}
+
+.gpd-container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+
+/* --- КНОПКА НАЗАД (Притиснута праворуч) --- */
+.back-link {
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--btn-blue);
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  background: #ffffff;
+  color: var(--btn-blue-hover);
+  transform: translateX(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* --- ШАПКА --- */
+.gpd-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.gpd-header .highlight {
+  color: var(--btn-green, #4caf50);
+  /* Нехай тут акцент буде зеленим/свіжим */
+}
+
+/* --- ІНФО-ПАНЕЛЬ --- */
+.gpd-info-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.gpd-info-panel h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+.gpd-info-panel p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- РОЗКЛАД (СІТКА КАРТОК) --- */
+.schedule-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--text-main);
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 0px #ffffff;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.schedule-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 8px solid;
+  /* Товста кольорова лінія зверху */
+}
+
+.schedule-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Кольори для кожної картки розкладу */
+.card-yellow {
+  border-top-color: #ffca28;
+}
+
+.card-blue {
+  border-top-color: #42a5f5;
+}
+
+.card-green {
+  border-top-color: #66bb6a;
+}
+
+.card-orange {
+  border-top-color: #ffa726;
+}
+
+.card-time {
+  display: inline-block;
+  background: #f1f5f9;
+  color: var(--text-main);
+  font-weight: 900;
+  font-size: 1.2rem;
+  padding: 8px 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.schedule-card h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--text-main);
+}
+
+.schedule-card p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* --- ЗАКЛИК ДО ДІЇ (CTA) --- */
+.gpd-cta {
+  text-align: center;
+  background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+  padding: 40px;
+  border-radius: 30px;
+  border: 2px dashed #bae6fd;
+}
+
+.gpd-cta p {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 20px;
+}

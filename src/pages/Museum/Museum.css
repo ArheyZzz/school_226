@@ -1,0 +1,145 @@
+/* ==========================================================================
+   MUSEUM.CSS - Музей української діаспори
+   ========================================================================== */
+
+.museum-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  /* Увеличили первый параметр (верхний отступ) с 20px до 60px */
+  padding: 60px 0 80px 0;
+}
+
+.museum-container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+
+/* --- КНОПКА НАЗАД --- */
+.back-link {
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--btn-blue);
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  background: #ffffff;
+  color: var(--btn-blue-hover);
+  transform: translateX(-5px);
+  /* Легкий сдвиг влево при наведении */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+}
+
+.back-link .arrow {
+  font-size: 1.2rem;
+}
+
+/* --- ШАПКА СТРАНИЦЫ --- */
+.museum-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Заголовок берем из общих стилей, но переопределяем цвет акцента */
+.museum-header .highlight {
+  color: var(--btn-orange);
+}
+
+/* --- КОНТЕНТ (СЕТКА) --- */
+.museum-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 40px;
+  padding: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+}
+
+.museum-text {
+  flex: 1;
+}
+
+.museum-text h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--text-main);
+  margin-bottom: 20px;
+}
+
+.museum-text p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.museum-btn {
+  margin-top: 20px;
+}
+
+/* --- КАРТИНКА (ПОЛАРОИД) --- */
+.museum-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  /* Добавляем глубину для 3D */
+}
+
+.photo-frame {
+  background: #ffffff;
+  padding: 15px 15px 40px 15px;
+  /* Толстый низ как у Полароида */
+  border-radius: 12px;
+  box-shadow: 15px 20px 30px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  transform: rotate(3deg);
+  /* Слегка наклоняем */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.photo-frame:hover {
+  transform: rotate(0deg) scale(1.05);
+  /* При наведении выравнивается и увеличивается */
+  box-shadow: 10px 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.photo-frame img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* --- АДАПТИВНОСТЬ --- */
+@media (max-width: 900px) {
+  .museum-content {
+    flex-direction: column;
+    /* Картинка уходит вниз */
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .photo-frame {
+    transform: rotate(0deg);
+    margin-top: 20px;
+  }
+}

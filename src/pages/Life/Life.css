@@ -1,0 +1,174 @@
+/* ==========================================================================
+   LIFE.CSS - Жизнь школы (Кружки, Музей, ГПД)
+   ========================================================================== */
+
+.life-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  padding: 40px 0 80px 0;
+}
+
+.life-container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+
+/* --- ЗАГОЛОВОК СТРАНИЦЫ --- */
+.life-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.page-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 0px #ffffff;
+}
+
+.page-title .highlight {
+  color: var(--btn-blue);
+  /* Для этой страницы акцент сделаем синим */
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- СЕТКА КАРТОЧЕК --- */
+.life-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Сама карточка (горизонтальная на десктопе) */
+.life-card {
+  display: flex;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 20px;
+  gap: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.life-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Блок с картинкой */
+.life-card-image {
+  width: 300px;
+  height: 220px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.life-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.life-card:hover .life-card-image img {
+  transform: scale(1.05);
+  /* Легкий зум картинки при наведении */
+}
+
+/* Цветные ярлычки на картинках */
+.life-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.badge-orange {
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+}
+
+.badge-blue {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+}
+
+.badge-green {
+  background: linear-gradient(135deg, #66bb6a, #43a047);
+}
+
+/* Контентная часть карточки */
+.life-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.life-card-content h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--text-main);
+}
+
+.life-card-content p {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Текстовая кнопка со стрелочкой */
+.btn-text {
+  align-self: flex-start;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--btn-orange);
+  transition: transform 0.2s ease;
+}
+
+.btn-text:hover {
+  transform: translateX(5px);
+  /* Стрелочка уезжает вправо при наведении */
+  color: var(--btn-orange-hover);
+}
+
+/* --- АДАПТИВНОСТЬ --- */
+@media (max-width: 768px) {
+  .life-card {
+    flex-direction: column;
+    /* На мобилках картинка будет сверху */
+    padding: 15px;
+    gap: 20px;
+  }
+
+  .life-card-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+  }
+}
