@@ -7,6 +7,19 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    /* Плавное появление всего лайаута после лоадера */
+    animation: fadeInLayout 0.5s ease-in forwards;
+}
+
+/* Анимация проявления от 0 до 100% видимости */
+@keyframes fadeInLayout {
+    0% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .global-background {
