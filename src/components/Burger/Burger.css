@@ -1,33 +1,25 @@
 .burger-button {
-  display: none;
-  /* Скрыт на десктопе */
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  cursor: pointer;
-  background: rgba(30, 41, 59, 0.55);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-
-  /* ВАЖНО: z-index выше чем у overlay */
-  position: relative;
-  z-index: 1000;
+  z-index: 110;
 }
 
 .burger-button:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
-  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #ffffff;
 }
 
 .burger-button__line {
   fill: none;
-  stroke: var(--text);
+  stroke: #ffffff;
   stroke-width: 5.5;
   stroke-linecap: round;
   transition:
@@ -37,7 +29,7 @@
 }
 
 .burger-button.is-active .burger-button__line {
-  stroke: var(--color-primary);
+  stroke: var(--btn-white, #ffffff);
   stroke-dasharray: 90 207;
   stroke-dashoffset: -134;
 }

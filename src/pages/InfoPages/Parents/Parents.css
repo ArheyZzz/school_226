@@ -1,0 +1,193 @@
+/* ==========================================================================
+   PARENTS.CSS - Сторінка для батьків (Вступ)
+   ========================================================================== */
+
+.parents-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  padding: 60px 0 80px 0;
+}
+
+.parents-container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+.parents-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.parents-header .highlight {
+  color: var(--btn-blue);
+}
+
+/* --- КАРТКИ ІНФОРМАЦІЇ --- */
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.shadow-blue {
+  box-shadow: 0 10px 30px rgba(66, 165, 245, 0.1);
+}
+
+.shadow-orange {
+  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.1);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.info-card h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 15px;
+}
+
+.info-card p,
+.info-card li {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-card strong {
+  color: var(--text-main);
+}
+
+/* --- СПИСКИ ДОКУМЕНТІВ --- */
+.docs-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.docs-block {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e2e8f0;
+}
+
+.docs-block h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 25px;
+  border-bottom: 2px dashed #e2e8f0;
+  padding-bottom: 15px;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.check-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.checklist strong {
+  color: var(--text-main);
+}
+
+/* --- БАНЕР ОНЛАЙН ПОДАЧІ --- */
+.online-banner {
+  background: linear-gradient(135deg, var(--btn-blue), #1e88e5);
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  box-shadow: 0 15px 35px rgba(66, 165, 245, 0.3);
+  color: white;
+}
+
+.banner-content h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 1.05rem;
+  font-weight: 500;
+  opacity: 0.9;
+  max-width: 500px;
+}
+
+.banner-btn {
+  background: #ffffff !important;
+  color: var(--btn-blue) !important;
+  box-shadow: 0 6px 0 #e2e8f0 !important;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.banner-btn:hover {
+  box-shadow: 0 2px 0 #cbd5e1 !important;
+}
+
+/* --- АДАПТИВНІСТЬ --- */
+@media (max-width: 768px) {
+  .info-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .online-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-content p {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,173 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #62c7ff 0%, #87d9ff 50%, #bfeeff 100%);
+}
+
+.cat-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  animation: runAcross 7s linear forwards;
+}
+
+.cat {
+  width: 220px;
+  z-index: 2;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, .15));
+}
+
+.rainbow {
+  position: absolute;
+  right: 160px;
+  bottom: 60px;
+  width: 380px;
+  height: 32px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #ff5959, #ff9d00, #ffe15c, #63d96b, #49a8ff, #a94cff);
+  animation: rainbowPulse 1.2s linear infinite;
+  z-index: 1;
+}
+
+.loading {
+  z-index: 3;
+  margin-top: 40px;
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+  font-size: 67.2px;
+  font-weight: 900;
+  line-height: 73.92px;
+  color: rgb(255, 152, 0);
+  text-shadow:
+    rgb(255, 255, 255) 3px 3px 0px,
+    rgba(0, 0, 0, 0.05) 6px 6px 0px;
+}
+
+.loading span {
+  animation: dots 1.4s infinite;
+}
+
+.loading span:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.loading span:nth-child(3) {
+  animation-delay: .4s;
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, .9);
+  border-radius: 999px;
+  filter: blur(2px);
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-radius: inherit;
+}
+
+.cloud1 {
+  width: 220px;
+  height: 70px;
+  top: 15%;
+  animation: cloudMove 20s linear infinite;
+}
+
+.cloud1::before {
+  width: 90px;
+  height: 90px;
+  top: -30px;
+  left: 40px;
+}
+
+.cloud1::after {
+  width: 70px;
+  height: 70px;
+  top: -20px;
+  right: 30px;
+}
+
+.cloud2 {
+  width: 180px;
+  height: 60px;
+  top: 55%;
+  animation: cloudMove 25s linear infinite;
+}
+
+.cloud3 {
+  width: 260px;
+  height: 80px;
+  top: 75%;
+  animation: cloudMove 30s linear infinite;
+}
+
+
+@keyframes runAcross {
+  from {
+    transform: translateX(-450px);
+  }
+
+  to {
+    transform: translateX(calc(100vw + 450px));
+  }
+}
+
+@keyframes cloudMove {
+  from {
+    transform: translateX(-300px);
+  }
+
+  to {
+    transform: translateX(calc(100vw + 300px));
+  }
+}
+
+@keyframes rainbowPulse {
+  0% {
+    opacity: 0.75;
+    transform: scale(0.95);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 0.75;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes dots {
+
+  0%,
+  20% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .loading {
+    font-size: 38px;
+    line-height: 44px;
+  }
+
+}

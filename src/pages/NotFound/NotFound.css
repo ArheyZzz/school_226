@@ -1,79 +1,134 @@
-.notfound {
-  min-height: calc(100vh - 200px);
+/* ==========================================================================
+   NOTFOUND.CSS - Сторінка 404
+   ========================================================================== */
 
+.notfound-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 120px - 200px);
+  /* Мінус шапка і футер */
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 40px 20px;
+}
 
-  padding: 28px;
+.notfound-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .notfound-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 50px 40px;
   text-align: center;
-
-  padding: 48px 36px;
-  border-radius: 26px;
-
-  background: rgba(30, 41, 59, 0.55);
-  border: 1px solid rgba(148, 163, 184, 0.18);
-
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+  max-width: 500px;
+  width: 100%;
 }
 
-/* 404 */
+/* Анімація для іконки */
+.notfound-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .notfound-code {
-  margin: 0 0 10px;
-
-  font-size: clamp(64px, 10vw, 120px);
+  font-size: 6rem;
   font-weight: 900;
-
-  background: linear-gradient(135deg,
-      var(--color-primary),
-      #8b5cf6);
-
-  -webkit-background-clip: text;
-  color: transparent;
+  color: var(--btn-blue);
+  line-height: 1;
+  margin-bottom: 10px;
+  text-shadow: 4px 4px 0px rgba(66, 165, 245, 0.15);
 }
 
-/* title */
 .notfound-title {
-  margin: 0 0 14px;
-  font-size: 28px;
+  font-size: 1.8rem;
   font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 15px;
 }
 
-/* text */
 .notfound-text {
-  margin: 0 0 22px;
-  color: rgba(203, 213, 225, 0.75);
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
-/* countdown */
+/* Блок з таймером */
+.notfound-timer-box {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 30px;
+  background: #f8fafc;
+  padding: 12px 20px;
+  border-radius: 16px;
+  display: inline-block;
+  border: 1px dashed #cbd5e1;
+}
+
 .notfound-count {
-  font-weight: 800;
-  color: var(--color-primary);
+  color: var(--btn-orange);
+  font-weight: 900;
+  font-size: 1.3rem;
+  margin: 0 5px;
 }
 
-/* button */
+/* 3D Кнопка */
 .notfound-btn {
-  padding: 12px 22px;
-  border-radius: 12px;
+  background: var(--btn-blue);
+  color: #fff;
   border: none;
-
-  background: var(--color-primary);
-  color: white;
-
-  font-weight: 700;
+  padding: 16px 30px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  border-radius: 16px;
   cursor: pointer;
-
-  transition: transform 250ms ease,
-    box-shadow 250ms ease;
+  box-shadow: 0 6px 0 #1e88e5;
+  /* Темніший синій для тіні */
+  transition: all 0.1s ease;
+  width: 100%;
 }
 
 .notfound-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(59, 130, 246, 0.3);
+  background: #42a5f5;
+  /* Трохи світліший при наведенні */
+}
+
+.notfound-btn:active {
+  transform: translateY(6px);
+  box-shadow: 0 0px 0 #1e88e5;
+}
+
+/* --- АДАПТИВНІСТЬ --- */
+@media (max-width: 480px) {
+  .notfound-card {
+    padding: 30px 20px;
+  }
+
+  .notfound-code {
+    font-size: 4.5rem;
+  }
+
+  .notfound-title {
+    font-size: 1.5rem;
+  }
 }

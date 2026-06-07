@@ -1,0 +1,174 @@
+/* ==========================================================================
+   PUBLICINFO.CSS - Публічна інформація (Документи)
+   ========================================================================== */
+
+.public-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  padding: 60px 0 80px 0;
+}
+
+.public-container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+
+.public-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.public-header .highlight {
+  color: var(--btn-blue);
+}
+
+/* --- СІТКА ДОКУМЕНТІВ --- */
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.doc-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 40px 30px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.doc-icon {
+  font-size: 2.5rem;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+
+/* Кольорові тіні для іконок */
+.shadow-blue {
+  box-shadow: 0 10px 20px rgba(66, 165, 245, 0.2);
+}
+
+.shadow-orange {
+  box-shadow: 0 10px 20px rgba(249, 115, 22, 0.2);
+}
+
+.shadow-green {
+  box-shadow: 0 10px 20px rgba(76, 175, 80, 0.2);
+}
+
+.shadow-purple {
+  box-shadow: 0 10px 20px rgba(171, 71, 188, 0.2);
+}
+
+.doc-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 15px;
+}
+
+.doc-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 25px;
+  flex-grow: 1;
+  /* Притискає посилання донизу картки */
+}
+
+.doc-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.doc-links .btn-text {
+  align-self: flex-start;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--btn-blue);
+  background: #f1f5f9;
+  padding: 8px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.doc-links .btn-text:hover {
+  background: var(--btn-blue);
+  color: #ffffff;
+  transform: translateX(0);
+  /* Відміняємо зсув з базового класу */
+}
+
+/* --- БЛОК ІЗ ЗАКОНОМ (ЗНОСКА) --- */
+.law-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: #f8fafc;
+  border-left: 5px solid var(--btn-blue);
+  padding: 25px 30px;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+}
+
+.law-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.law-text {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.law-text strong {
+  color: var(--text-main);
+}
+
+.law-text a {
+  color: var(--btn-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.law-text a:hover {
+  text-decoration: underline;
+}
+
+/* --- АДАПТИВНІСТЬ --- */
+@media (max-width: 768px) {
+  .docs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .law-block {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-left: none;
+    border-top: 5px solid var(--btn-blue);
+    border-radius: 0 0 20px 20px;
+  }
+}
