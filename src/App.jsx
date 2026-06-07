@@ -31,7 +31,7 @@ function App() {
 		return <Preloader />;
 	}
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename='/school_226'>
 			<Routes>
 				<Route element={<Layout />}>
 					<Route path='/' element={<Home />} />
